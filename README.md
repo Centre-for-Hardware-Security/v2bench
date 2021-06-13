@@ -7,8 +7,8 @@ a very simple tool to convert verilog to bench files
 * NAND
 * OR 
 * NOR 
-* XOR 
 * INV DFF
 2. Check the included sample synthesis script that works with Cadence Genus. The set_dont_use statements prevent the tool from using any complex gates. You should modify this script to match the names of the basic gates in your own ASIC library (.lib)
-3. Take the generated netlist and put it through v2bench: *./v2bench input.v output.bench*
-4. Now stare at the wonders of this outdated & unpractical format that for some reason keeps being support by academic tools...
+3. The changes that you did to the synthesis script have to reflected in the *v2bench* parsing. For this you have to modify the cell definition string in /src/cell_definition.h. There is one string for each gate type, it is pretty straightforward.
+4. Take the generated netlist and put it through v2bench: *./v2bench input.v output.bench*
+5. Now stare at the generated file and wonder why this outdated & unpractical format keeps being support by academic tools...
